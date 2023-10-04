@@ -1,5 +1,6 @@
 import argparse
 import json
+from pathlib import Path
 import re
 import time
 
@@ -13,7 +14,7 @@ def read_args():
     parser = argparse.ArgumentParser()
     
     # adding aan rguments 
-    parser.add_argument('--config', default='config.json', help='Path to the configuration file.')
+    parser.add_argument('--config', default=Path(__file__).with_name('config.json').absolute(), help='Path to the configuration file.')
     parser.add_argument('--kwargs', nargs='*', action = keyvalue)
     
     #parsing arguments 
