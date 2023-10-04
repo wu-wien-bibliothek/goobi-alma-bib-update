@@ -20,8 +20,8 @@ class MarcSnippet:
             datafield = ET.SubElement(self.record, 'datafield', tag=config['datafield'], ind1=config['ind1'], ind2=config['ind2'])
             for subfield in config['subfields']:
                 subfieldElement = ET.SubElement(datafield, 'subfield', tag=subfield[0])
-                if subfield[1] == 'data' and config['target-subfield'] == subfield[0]:
-                    subfieldElement.text = data
+                if subfield[0] == config['target_subfield']:
+                    subfieldElement.text = subfield[1].format(data=data)
                 else:
                     subfieldElement.text = subfield[1]
 

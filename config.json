@@ -17,7 +17,7 @@
             "ind2": " ",
             "target_subfield": "a",
             "subfields": [
-                ["a", "data"]
+                ["a", "(AT-OBV){data}"]
             ],
             "validation_regex": "AC\\d{8}"
         }
@@ -29,7 +29,7 @@
             "ind2": " ",
             "target_subfield": "a",
             "subfields": [
-                ["a", "data"],
+                ["a", "{data}"],
                 ["2", "doi"]
             ],
             "validation_regex": "^10.\\d{4,}/.+$"
@@ -40,7 +40,7 @@
             "ind2": "0",
             "target_subfield": "u",
             "subfields": [
-                ["u", "data"],
+                ["u", "https://doi.org/{data}"],
                 ["x", "Resolving-System"],
                 ["3", "Volltext"]
             ],
@@ -54,7 +54,7 @@
             "subfields": [
                 ["i", "Elektronische Reproduktion"],
                 ["d", "Wien : Wirtschaftsuniversität Wien"],
-                ["o", "data"]
+                ["o", "{data}"]
             ],
             "validation_regex": "^10.\\d{4,}/.+$"
         },
@@ -64,7 +64,7 @@
             "ind2": "1",
             "target_subfield": "u",
             "subfields": [
-                ["u", "data"],
+                ["u", "https://doi.org/{data}"],
                 ["x", "Resolving-System"],
                 ["z", "kostenfrei"],
                 ["3", "Volltext"],
