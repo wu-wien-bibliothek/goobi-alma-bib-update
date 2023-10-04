@@ -2,25 +2,24 @@
     "target_type": "sftp",   
     "target_path": "/files/sandbox/import/goobi/",
     "sftp_settings_file": "/Users/gduffner/alma_sftp.json",
-    "matching-ids": {
+    "matching_ids": {
         "mms_id": {
             "controlfield": "001",
-            "validation-regex": "^9\\d+3337$"
+            "validation_regex": "^9\\d+3337$"
         },
         "ac_nr": {
             "controlfield": "009",
-            "validation-regex": "^AC\\d{8}"
+            "validation_regex": "^AC\\d{8}"
         },
         "other_id": {
             "datafield": "035",
             "ind1": " ",
             "ind2": " ",
-            "target-subfield": "a",
+            "target_subfield": "a",
             "subfields": [
                 ["a", "data"]
             ],
-            "validation-regex": "AC\\d{8}",
-            "prefix": "(AT-OBV)"
+            "validation_regex": "AC\\d{8}"
         }
     },
     "data": {
@@ -28,43 +27,42 @@
             "datafield": "024",
             "ind1": "7",
             "ind2": " ",
-            "target-subfield": "a",
+            "target_subfield": "a",
             "subfields": [
                 ["a", "data"],
                 ["2", "doi"]
             ],
-            "validation-regex": "^10.\\d{4,}/.+$"
+            "validation_regex": "^10.\\d{4,}/.+$"
         },
         "doi-url": {
             "datafield": "856",
             "ind1": "4",
             "ind2": "0",
-            "target-subfield": "u",
+            "target_subfield": "u",
             "subfields": [
                 ["u", "data"],
                 ["x", "Resolving-System"],
                 ["3", "Volltext"]
             ],
-            "validation-regex": "^10.\\d{4,}/.+$",
-            "prefix": "https://doi.org/"
+            "validation_regex": "^10.\\d{4,}/.+$"
         },
         "repro-776": {
             "datafield": "776",
             "ind1": "0",
             "ind2": "8",
-            "target-subfield": "o",
+            "target_subfield": "o",
             "subfields": [
                 ["i", "Elektronische Reproduktion"],
                 ["d", "Wien : Wirtschaftsuniversität Wien"],
                 ["o", "data"]
             ],
-            "validation-regex": "^10.\\d{4,}/.+$"
+            "validation_regex": "^10.\\d{4,}/.+$"
         },
         "repro-doi-url": {
             "datafield": "856",
             "ind1": "4",
             "ind2": "1",
-            "target-subfield": "u",
+            "target_subfield": "u",
             "subfields": [
                 ["u", "data"],
                 ["x", "Resolving-System"],
@@ -72,8 +70,7 @@
                 ["3", "Volltext"],
                 ["7", "0"]
             ],
-            "validation-regex": "^10.\\d{4,}/.+$",
-            "prefix": "https://doi.org/"
+            "validation_regex": "^10.\\d{4,}/.+$"
         }
     }
 }

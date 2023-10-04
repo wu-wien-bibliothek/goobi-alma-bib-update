@@ -34,10 +34,10 @@ def find_matching_id(key_values, config):
     # The id against which the record will match can be at any position.
     # Loop through the possible ids in the config file and take the first
     #   which you find in the arguments. 
-    for key in config["matching-ids"]:
+    for key in config["matching_ids"]:
         if key in key_values:
             id_value = key_values[key]
-            validate_value(config["matching-ids"][key]["validation-regex"], id_value)
+            validate_value(config["matching_ids"][key]["validation_regex"], id_value)
             # Delete the entry from the array of arguments.
             del key_values[key]
             return (key, id_value)
@@ -47,11 +47,11 @@ def add_fields(key_values, config, marc):
     # Loop through all arguments left after determining the matching id and add
     #   a field for each datafield.
     for key in key_values:
-        # All keys left must be in data and not in matching-ids
+        # All keys left must be in data and not in matching_ids
         if not key in config["data"]:
             raise ValueError
         data_value = key_values[key]
-        validate_value(config["data"][key]["validation-regex"], data_value)
+        validate_value(config["data"][key]["validation_regex"], data_value)
         marc.add_field(config["data"][key], data_value)
 
 def write_xml_file(config, marc):
@@ -80,7 +80,7 @@ def main():
     key_values = args.kwargs
     matching_id_key, matching_id_value = find_matching_id(key_values, config)
     marc = MarcSnippet()
-    marc.add_field(config["matching-ids"][matching_id_key], matching_id_value)
+    marc.add_field(config["matching_ids"][matching_id_key], matching_id_value)
     add_fields(key_values, config, marc)
     write_xml_file(config, marc)
 
